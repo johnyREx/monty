@@ -14,7 +14,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (globalvar.token2 == NULL)
 	{
-		free_distlint(*stack);
+		free_dlistint(*stack);
 		stderr_int(line_number);
 	}
 	if (!_isdigit(globalvar.token2) || stack == NULL)
