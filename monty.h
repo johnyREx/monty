@@ -37,4 +37,11 @@ void init_globalvars(void);
 void free_globalvars(void);
 void tokenize_input(char *input_line);
 
+void free_distlint(stack_t *stack);
+void stderr_int(unsigned int line_number);
+int _isdigit(char *str);
+void free_dlistint(stack_t *stack);
+void push_stack_first(stack_t **stack, int n);
+void push_stack_end(stack_t **stack, int n);
+
 #endif

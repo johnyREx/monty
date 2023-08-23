@@ -17,7 +17,7 @@ void push(stack_t **stack, unsigned int line_number)
 		free_distlint(*stack);
 		stderr_int(line_number);
 	}
-	if (!_isdigit() || stack == NULL)
+	if (!_isdigit(globalvar.token2) || stack == NULL)
 	{
 		free_dlistint(*stack);
 		stderr_int(line_number);
@@ -44,29 +44,15 @@ void push(stack_t **stack, unsigned int line_number)
 
 void pall(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp = NULL;
+	stack_t *temp = *stack;
 
-	if (*stack == NULL)
-	{
-		return;
-	}
-	if (*stack == NULL && line_number != 1)
-	{
-		free_dlistint(*stack);
-		free_globalvars();
-		exit(EXIT_SUCCESS);
-	}
-	temp = *stack;
+	(void)line_number;
 
-	while (temp->next != NULL)
+	while (temp != NULL)
+	{
+		printf("%d\n", temp->n);
 		temp = temp->next;
-	while (temp->prev != NULL)
-	{
-		printf("%d", temp->n);
-		temp = temp->prev;
-		printf("\n");
 	}
-	printf("%d\n", temp->n);
 }
 
 /**
