@@ -9,6 +9,7 @@
 void push_stack_first(stack_t **stack, int n)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
+
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
