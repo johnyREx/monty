@@ -14,11 +14,12 @@ global_var_t globalvar;
 
 int main(int argc, char *argv[])
 {
-	FILE *file;
 	char *line = NULL;
-        size_t len = 0;
-        stack_t *stack = NULL;
-        unsigned int line_number = -1;
+	size_t len = 0;
+	FILE *file;
+
+	stack_t *stack = NULL;
+	unsigned int line_number = 0;
 
 	if (argc != 2)
 	{
@@ -35,8 +36,9 @@ int main(int argc, char *argv[])
 
 	init_globalvars();
 
-	while ((getline(&line, &len, file)) != -1)
+	while (fgets(line, len, file) != NULL)
 	{
+		line_number++;
 		tokenize_input(line);
 
 		if (globalvar.token2 != NULL)
