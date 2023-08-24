@@ -13,6 +13,8 @@ void tokenize_input(char *input_line)
 	char *token;
 	size_t token_length;
 
+	free(globalvar.token2);
+
 	if (input_line == NULL)
 	{
 		globalvar.token2 = NULL;

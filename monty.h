@@ -43,4 +43,4 @@ int _isdigit(char *str);
 void push_stack_first(stack_t **stack, int n);
 void push_stack_end(stack_t **stack, int n);
 
-#endif
+#endif /* MONTY_H */

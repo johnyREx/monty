@@ -95,6 +95,7 @@ void pop(stack_t **stack, unsigned int line_number)
 		*stack = (*stack)->next;
 		if (*stack != NULL)
 			(*stack)->prev = NULL;
+		printf("%d\n", temp->n);
 		free(temp);
 	}
 }
