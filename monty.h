@@ -32,6 +32,11 @@ void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
+void print_usage_error(unsigned int line_number);
+void print_unknown_opcode_error(char *opcode, unsigned int line_number);
+void print_empty_stack_error(unsigned int line_number);
+void print_short_stack_error(unsigned int line_number);
+void print_malloc_error(void);
 
 void init_globalvars(void);
 void free_globalvars(void);

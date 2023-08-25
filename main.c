@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 			}
 			else
 			{
-				fprintf(stderr, "L%u: Unknown opcode: %s\n", line_number, globalvar.token2);
+				print_unknown_opcode_error(globalvar.token2, line_number);
 				free(line);
 				free_dlistint(stack);
 				free_globalvars();
